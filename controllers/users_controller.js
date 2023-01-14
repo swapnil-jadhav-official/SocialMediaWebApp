@@ -90,9 +90,11 @@ module.exports.createSession = function(req, res){
 
     });
 
- 
-
     
+}
 
-    
+//sign in and create session for user
+
+module.exports.createSession= function(req,res){
+    return res.redirect('/');
 }
