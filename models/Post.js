@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
-    Content: {
+    content: {
         type: String,
         required: true
        
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: user
+        ref: 'User'
     },
 
 }, {
@@ -17,5 +17,5 @@ const postSchema = new mongoose.Schema({
 
 
 const Post = mongoose.model('Post', postSchema);
-
+console.log('Post schema loaded');
 module.exports = Post;
