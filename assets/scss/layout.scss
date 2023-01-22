@@ -5,4 +5,12 @@ body{
     #layout-main{
         height: 100%;
     }
+    .success-message {
+        background-color: green;
+    }
+    
+    .error-message {
+        background-color: red;
+    }
+    
 }
