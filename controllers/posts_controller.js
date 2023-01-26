@@ -9,6 +9,8 @@ module.exports.create = async function(req, res){
         });
         
         if (req.xhr){
+            post = await post.populate('user', 'name');
+        
             return res.status(200).json({
                 data: {
                     post: post
@@ -16,12 +18,15 @@ module.exports.create = async function(req, res){
                 message: "Post created!"
             });
         }
+        
 
         req.flash('success', 'Post published!');
         return res.redirect('back');
 
     }catch(err){
         req.flash('error', err);
+        // added this to view the error on console as well
+        console.log(err);
         return res.redirect('back');
     }
   
